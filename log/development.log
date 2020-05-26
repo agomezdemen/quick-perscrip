@@ -6,3 +6,1168 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 45ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 2824)
 
 
+Started GET "/application" for ::1 at 2020-05-25 18:46:08 -0500
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/application"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/mailer" for ::1 at 2020-05-25 18:46:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/mailer"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-05-25 18:46:37 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.6ms | Allocations: 196)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 1063)
+
+
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePatients (20200526010926)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200526010926"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDoctors (20200526011027)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200526011027"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-26 01:11:03.112121"], ["updated_at", "2020-05-26 01:11:03.112121"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPatient Create (0.6ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Cameron"], ["email", "cameron@cameron.com"], ["password_digest", "bringo7"], ["created_at", "2020-05-26 01:13:29.079842"], ["updated_at", "2020-05-26 01:13:29.079842"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDoctor Create (0.5ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Alex"], ["email", "alex@alex.com"], ["password_digest", "getoverh3re!"], ["created_at", "2020-05-26 01:15:00.497955"], ["updated_at", "2020-05-26 01:15:00.497955"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPatient Load (2.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-05-25 23:11:02 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.6ms | Allocations: 315)
+Completed 200 OK in 29ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 1823)
+
+
+Started GET "/index" for ::1 at 2020-05-25 23:11:07 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/homes/index" for ::1 at 2020-05-25 23:19:20 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+TypeError (superclass mismatch for class Home):
+  
+app/controllers/homes_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2020-05-25 23:21:51 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.5ms | Allocations: 198)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 1066)
+
+
+Started GET "/" for ::1 at 2020-05-25 23:24:04 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.8ms | Allocations: 190)
+Completed 200 OK in 15ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 2249)
+
+
+Started GET "/powers" for ::1 at 2020-05-26 00:21:07 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/powers"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/patients/new" for ::1 at 2020-05-26 00:21:10 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 2.2ms | Allocations: 1098)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2838)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:   <%= f.label :name %><br>
+    6:   <%= f.text_field :name %><br>
+    7:   <%= f.label :email %><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/patients/" for ::1 at 2020-05-26 00:21:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/patients"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions/" for ::1 at 2020-05-26 00:21:47 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:21:52 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 37.3ms | Allocations: 2365)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 1.6ms | Allocations: 3425)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 00:21:58 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.6ms | Allocations: 876)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1336)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:   <%= f.label :name %><br>
+    6:   <%= f.text_field :name %><br>
+    7:   <%= f.label :email %><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/login" for ::1 at 2020-05-26 00:22:01 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 16.2ms | Allocations: 497)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 1108)
+
+
+Started GET "/login" for ::1 at 2020-05-26 00:22:04 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.7ms | Allocations: 255)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 821)
+
+
+Started POST "/login" for ::1 at 2020-05-26 00:22:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GcmOxXzvoHNYOJyZc4Z0KTLLvz4q/VZsZU+dyB5exFtgnOK9JDzftabAccGh0aFWtdNwBJfVWNZFzdibQcrnxg==", "name"=>"cameron", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."name" = ? LIMIT ?[0m  [["name", "cameron"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1139)
+
+
+Started GET "/login" for ::1 at 2020-05-26 00:22:15 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 255)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 814)
+
+
+Started POST "/login" for ::1 at 2020-05-26 00:22:44 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"HNL6XW7QWEW4dRQPqvFGwdNsno2abjtGvUTkWZsLVg9lh5YlNgMng0aN+Vd4ppO+VHRRtydGNfydxqEKxJ91kg==", "name"=>"alex", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."name" = ? LIMIT ?[0m  [["name", "alex"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 968)
+
+
+Started GET "/login" for ::1 at 2020-05-26 00:22:44 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.8ms | Allocations: 255)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 818)
+
+
+Started GET "/login" for ::1 at 2020-05-26 00:23:22 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.6ms | Allocations: 258)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 977)
+
+
+Started GET "/login" for ::1 at 2020-05-26 00:23:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.3ms | Allocations: 255)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 813)
+
+
+Started GET "/login" for ::1 at 2020-05-26 00:23:30 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.7ms | Allocations: 255)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 815)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 00:23:32 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.8ms | Allocations: 874)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1573)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:   <%= f.label :name %><br>
+    6:   <%= f.text_field :name %><br>
+    7:   <%= f.label :email %><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/patients/new" for ::1 at 2020-05-26 00:24:00 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.8ms | Allocations: 874)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1416)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:   <%= f.label :name %><br>
+    6:   <%= f.text_field :name %><br>
+    7:   <%= f.label :email %><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/login" for ::1 at 2020-05-26 00:24:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.6ms | Allocations: 255)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 815)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 00:25:28 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.6ms | Allocations: 827)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1526)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:   <%= f.label :name %><br>
+    6:   <%= f.text_field :name %><br>
+    7:   <%= f.label :email %><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:25:56 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 7.5ms | Allocations: 1928)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.6ms | Allocations: 3645)
+
+
+Started GET "/login" for ::1 at 2020-05-26 00:25:58 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 2.9ms | Allocations: 454)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1150)
+
+
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:26:35 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 4.3ms | Allocations: 971)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 2679)
+
+
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:27:44 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 3.2ms | Allocations: 974)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 2679)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 00:29:05 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 3.4ms | Allocations: 1090)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2203)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:   <%= f.label :name %><br>
+    6:   <%= f.text_field :name %><br>
+    7:   <%= f.label :email %><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/login" for ::1 at 2020-05-26 00:29:08 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.8ms | Allocations: 454)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 1147)
+
+
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:42:54 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 14.7ms | Allocations: 2355)
+Completed 200 OK in 35ms (Views: 23.3ms | ActiveRecord: 1.3ms | Allocations: 4861)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 00:42:56 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 3.8ms | Allocations: 1411)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2593)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:   <%= f.label :name %><br>
+    6:   <%= f.text_field :name %><br>
+    7:   <%= f.label :email %><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/patients/new" for ::1 at 2020-05-26 00:47:09 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 1.2ms | Allocations: 1061)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2782)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:     <label> Patient name:</label><br>
+    6:     <%= f.text_field :name %><br>
+    7:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/patients/new" for ::1 at 2020-05-26 00:47:13 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.8ms | Allocations: 874)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1421)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:     <label> Patient name:</label><br>
+    6:     <%= f.text_field :name %><br>
+    7:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/login" for ::1 at 2020-05-26 00:47:18 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 2.0ms | Allocations: 486)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 1615)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 00:47:22 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.8ms | Allocations: 876)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1426)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Patients#new</h1>
+    2: 
+    3: <h1>Sign Up</h1>
+    4: <%= form_for @patient do |f|%>
+    5:     <label> Patient name:</label><br>
+    6:     <%= f.text_field :name %><br>
+    7:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:4
+Started GET "/patients/new" for ::1 at 2020-05-26 00:48:02 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 1.2ms | Allocations: 1052)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2756)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f|%>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:49:44 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 4.0ms | Allocations: 1026)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 2748)
+
+
+Started GET "/" for ::1 at 2020-05-26 00:49:52 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/cameronrhinehardt/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.3ms | Allocations: 195)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1058)
+
+
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:49:57 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 4.9ms | Allocations: 988)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 2880)
+
+
+Started GET "/sessions/" for ::1 at 2020-05-26 00:50:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 00:50:08 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 3.3ms | Allocations: 811)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 1377)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 00:50:10 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 1.5ms | Allocations: 1051)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2168)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPatient Load (2.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPatient Create (1.8ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bill"], ["email", "rer@gmail.com"], ["password_digest", "b1ll5"], ["created_at", "2020-05-26 06:00:06.785121"], ["updated_at", "2020-05-26 06:00:06.785121"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/login" for ::1 at 2020-05-26 01:00:42 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 3.7ms | Allocations: 612)
+Completed 200 OK in 27ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 3122)
+
+
+Started POST "/login" for ::1 at 2020-05-26 01:00:57 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4DVZJqyEB/j99HS7TNz0j/sjMhm/fIOYNFNsYip2JEWZYDVe9Fd4PgMMmeOeiyHwfDv9IwJUjSIU0SkxdeIH2A==", "email"=>"rer@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "rer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.7ms | Allocations: 6606)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-05-26 01:02:28 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4DVZJqyEB/j99HS7TNz0j/sjMhm/fIOYNFNsYip2JEWZYDVe9Fd4PgMMmeOeiyHwfDv9IwJUjSIU0SkxdeIH2A==", "email"=>"rer@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "rer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.1ms | Allocations: 6141)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-05-26 01:03:16 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4DVZJqyEB/j99HS7TNz0j/sjMhm/fIOYNFNsYip2JEWZYDVe9Fd4PgMMmeOeiyHwfDv9IwJUjSIU0SkxdeIH2A==", "email"=>"rer@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "rer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.9ms | Allocations: 6050)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-05-26 01:03:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4DVZJqyEB/j99HS7TNz0j/sjMhm/fIOYNFNsYip2JEWZYDVe9Fd4PgMMmeOeiyHwfDv9IwJUjSIU0SkxdeIH2A==", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 974)
+
+
+Started GET "/login" for ::1 at 2020-05-26 01:03:22 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 262)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 983)
+
+
+Started POST "/login" for ::1 at 2020-05-26 01:03:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"N0zfWJFRMa4lhpSF8MCfyV1AWHChxRH5/pqNveM1PoVOGbMgyYJOaNt+ed0il0q22liXShztH0PeGMjuvKEdGA==", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 976)
+
+
+Started GET "/login" for ::1 at 2020-05-26 01:03:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.9ms | Allocations: 256)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 821)
+
+
+Started POST "/login" for ::1 at 2020-05-26 01:03:26 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gpgquCgpMM1Dcb5ETkpiMHTCUHDTLiDq0ROespQChCX7zUbAcPpPC72JUxycHbdP89qfSm4GLlDxkdvhy5anuA==", "email"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 965)
+
+
+Started GET "/login" for ::1 at 2020-05-26 01:03:26 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.0ms | Allocations: 255)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 818)
+
+
+Started POST "/login" for ::1 at 2020-05-26 01:03:29 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"dS4gCjvrvlWqz63raTitsYe4b8DdYtTw2C/8MyAy9jYMe0xyYzjBk1Q3QLO7b3jOAKCg+mBK2kr4rblgf6bVqw==", "email"=>"a", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "a"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 962)
+
+
+Started GET "/login" for ::1 at 2020-05-26 01:03:29 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.8ms | Allocations: 255)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 815)
+
+
+Started POST "/login" for ::1 at 2020-05-26 01:03:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"judAj4XyLuFbK2a6xIA8kGV1UdjUFB9dqNSqUKRJ1dT3siz33SFRJ6XTi+IW1+nv4m2e4mk8EeeIVu8D+932SQ==", "email"=>"rer@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "rer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 1336)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-05-26 01:03:47 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"judAj4XyLuFbK2a6xIA8kGV1UdjUFB9dqNSqUKRJ1dT3siz33SFRJ6XTi+IW1+nv4m2e4mk8EeeIVu8D+932SQ==", "email"=>"rer@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "rer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 1304)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 01:10:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 3.7ms | Allocations: 1014)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 1720)
+
+
+Started GET "/login" for ::1 at 2020-05-26 01:10:09 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.2ms | Allocations: 258)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 817)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 01:10:11 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 1.9ms | Allocations: 1012)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2183)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/patients/new" for ::1 at 2020-05-26 01:10:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.6ms | Allocations: 874)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 6222)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/patients/new" for ::1 at 2020-05-26 01:12:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.5ms | Allocations: 827)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 6166)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/login" for ::1 at 2020-05-26 01:12:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.3ms | Allocations: 258)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1037)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 01:12:38 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.9ms | Allocations: 874)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1433)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/sessions/welcome" for ::1 at 2020-05-26 01:14:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 6.0ms | Allocations: 1920)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 3701)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 01:14:28 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 1.4ms | Allocations: 1051)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.6ms | Allocations: 5901)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/patients/new" for ::1 at 2020-05-26 01:17:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.8ms | Allocations: 827)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 6178)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/patients/new" for ::1 at 2020-05-26 01:17:32 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.6ms | Allocations: 874)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1432)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/patients/new" for ::1 at 2020-05-26 12:25:49 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/cameronrhinehardt/Development/code/quick-perscrip/app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+...= Patient.new(params.require(:).permit(:name, :email, :passw...
+...                              ^
+/Users/cameronrhinehardt/Development/code/quick-perscrip/app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+...rmit(:name, :email, :password))
+...                              ^):
+  
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+Started GET "/welcome" for ::1 at 2020-05-26 12:25:59 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 15.1ms | Allocations: 1572)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 1.0ms | Allocations: 2348)
+
+
+Started GET "/login" for ::1 at 2020-05-26 12:26:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 5.8ms | Allocations: 454)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 1151)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 12:26:34 -0500
+  
+SyntaxError (/Users/cameronrhinehardt/Development/code/quick-perscrip/app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+...= Patient.new(params.require(:).permit(:name, :email, :passw...
+...                              ^
+/Users/cameronrhinehardt/Development/code/quick-perscrip/app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+...rmit(:name, :email, :password))
+...                              ^):
+  
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+app/controllers/patients_controller.rb:9: syntax error, unexpected ')', expecting end
+Started GET "/patients/new" for ::1 at 2020-05-26 12:28:46 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 0.8ms | Allocations: 827)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 6165)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sign Up</h1>
+    2: <%= form_for @patient do |f| %>
+    3:     <label> Patient name:</label><br>
+    4:     <%= f.text_field :name %><br>
+    5:     <label> Patient email:</label><br>
+  
+app/views/patients/new.html.erb:2
+Started GET "/patients/new" for ::1 at 2020-05-26 12:30:05 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 40.4ms | Allocations: 3805)
+Completed 200 OK in 67ms (Views: 45.2ms | ActiveRecord: 1.5ms | Allocations: 9180)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 12:30:40 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"FrEcASYOU0nDz/xkwhp3AKz/UwRsmQTI/MTR3oqiLyvWd343gUZb8tf94IL5laCQjV6cbX3yuWJ3B5UP168Yig==", "patient"=>{"name"=>"alex", "email"=>"alex@alex.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 411ms (ActiveRecord: 0.0ms | Allocations: 593)
+
+
+Started GET "/welcome" for ::1 at 2020-05-26 12:30:40 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 3.5ms | Allocations: 857)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 1632)
+
+
+Started GET "/login" for ::1 at 2020-05-26 12:31:13 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.0ms | Allocations: 258)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 818)
+
+
+Started POST "/login" for ::1 at 2020-05-26 12:31:24 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"eX4tEkHe5AIsYCBfE7tVRGqcduYgICme4ZptfIXVdpUAK0FqGQ2bxNKYzQfB7IA77YS53J0IJyTBGCgv2kFVCA==", "email"=>"alex@alex.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "alex@alex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 67ms (ActiveRecord: 0.3ms | Allocations: 1113)
+
+
+Started GET "/login" for ::1 at 2020-05-26 12:31:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.4ms | Allocations: 255)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 809)
+
+
+Started GET "/welcome" for ::1 at 2020-05-26 12:31:58 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 2.7ms | Allocations: 810)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1381)
+
+
+Started GET "/" for ::1 at 2020-05-26 12:33:38 -0500
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2020-05-26 12:39:30 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 46.3ms | Allocations: 1755)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 1.3ms | Allocations: 2533)
+
+
+Started GET "/login" for ::1 at 2020-05-26 12:45:10 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 2.2ms | Allocations: 258)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 825)
+
+
+Started POST "/login" for ::1 at 2020-05-26 12:45:19 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"y01dXdtF/ADgu7ziJL/DgyA9BFeqiTB9bErkRwgJP8uyGDElg5aDxh5DUbr26Bb8pyXLbRehPsdMyKEUV50cVg==", "email"=>"alex@alex.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "alex@alex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 1087)
+
+
+Started GET "/login" for ::1 at 2020-05-26 12:45:19 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 0.7ms | Allocations: 255)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 817)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 12:46:20 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 2.2ms | Allocations: 514)
+Completed 200 OK in 20ms (Views: 4.0ms | ActiveRecord: 0.5ms | Allocations: 4969)
+
+
