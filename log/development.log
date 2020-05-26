@@ -1171,3 +1171,196 @@ Processing by PatientsController#new as HTML
 Completed 200 OK in 20ms (Views: 4.0ms | ActiveRecord: 0.5ms | Allocations: 4969)
 
 
+Started GET "/patients/new" for ::1 at 2020-05-26 13:51:11 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 20.3ms | Allocations: 2527)
+Completed 200 OK in 55ms (Views: 28.5ms | ActiveRecord: 1.3ms | Allocations: 10095)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 13:51:38 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"FhDvsTHaGw5iYjGMSmS6jL3bV1Zn+NbZA7jbbrf6cHvW1o2HlpITtXZQLWpx620cnHqYP3aTa3OIe5+/6vdH2g==", "patient"=>{"name"=>"alez", "email"=>"alez@alex.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 528ms (ActiveRecord: 0.0ms | Allocations: 634)
+
+
+Started GET "/welcome" for ::1 at 2020-05-26 13:51:38 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 10.9ms | Allocations: 1359)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.9ms | Allocations: 2558)
+
+
+Started GET "/login" for ::1 at 2020-05-26 13:51:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.7ms | Allocations: 463)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 1163)
+
+
+Started POST "/login" for ::1 at 2020-05-26 13:51:59 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+DCZQkybAmqNECtCFt9MMkVj4HlSTCfh2gYf3N3G0tmBZfU6FEh9rHPoxhrEiJlNwnsvQ+9kKVv6hFqPglLxRA==", "email"=>"alez@alex.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "alez@alex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 1094)
+
+
+Started GET "/login" for ::1 at 2020-05-26 13:51:59 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.8ms | Allocations: 255)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 816)
+
+
+Started POST "/login" for ::1 at 2020-05-26 13:54:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"SQkhIGh+cVpIvyPzpGE8bW/mI0RHnbosBq5hT8GnlyUwXE1YMK0OnLZHzqt2NukS6P7sfvq1tJYmLCQcnjO0uA==", "email"=>"alex@alex.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "alex@alex.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 15ms (ActiveRecord: 1.0ms | Allocations: 978)
+
+
+Started GET "/login" for ::1 at 2020-05-26 13:54:27 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 2.5ms | Allocations: 256)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 815)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 14:13:32 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 11.5ms | Allocations: 2139)
+Completed 200 OK in 82ms (Views: 20.3ms | ActiveRecord: 1.0ms | Allocations: 9651)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 14:13:58 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"VsHz2gzFiu311/lKSGP4he7paj9SUpmY22rNTBb2xs+WB5Hsq42CVuHl5axz7C8Vz0ilVkM5JDJQqYmdS/vxbg==", "patient"=>{"name"=>"frank", "email"=>"frank@frank.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 570ms (ActiveRecord: 0.0ms | Allocations: 640)
+
+
+Started GET "/welcome" for ::1 at 2020-05-26 14:13:58 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 6.5ms | Allocations: 1354)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.6ms | Allocations: 2548)
+
+
+Started GET "/login" for ::1 at 2020-05-26 14:14:24 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 25.1ms | Allocations: 3982)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 4664)
+
+
+  
+ActionView::Template::Error (undefined method `pry' for #<Binding:0x00007fef752f66d0>
+Did you mean?  try):
+     6:    <%= password_field_tag :password%>
+     7:    <%= submit_tag "Login"%>
+     8: 
+     9:    <% binding.pry %>
+    10: <%end%>
+  
+app/views/sessions/new.html.erb:9
+app/views/sessions/new.html.erb:2
+Started GET "/login" for ::1 at 2020-05-26 14:15:15 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 159.8ms | Allocations: 3160)
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.0ms | Allocations: 4882)
+
+
+  
+LoadError (cannot load such file -- pry):
+  
+app/views/sessions/new.html.erb:1
+Started GET "/login" for ::1 at 2020-05-26 14:17:38 -0500
+  [1m[35m (40.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 6.5ms | Allocations: 1273)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms | Allocations: 3762)
+
+
+  
+LoadError (cannot load such file -- pry):
+  
+app/views/sessions/new.html.erb:1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/patients/new" for ::1 at 2020-05-26 14:22:51 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 19.2ms | Allocations: 2311)
+Completed 200 OK in 85ms (Views: 61.3ms | ActiveRecord: 0.9ms | Allocations: 10108)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 14:23:19 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ex4xBBE6ag1HZlALtDDThcm8zLnxlWaE+QoMp7tiTGHT2FMytnJitlNUTO2PvwQV6B0D0OD+2y5yyUh25m97wA==", "patient"=>{"name"=>"marc", "email"=>"marc@marc.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+Redirected to http://localhost:3000/welcome
+Completed 302 Found in 473ms (ActiveRecord: 0.0ms | Allocations: 629)
+
+
+Started GET "/welcome" for ::1 at 2020-05-26 14:23:19 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  [1m[36mPatient Load (1.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  Rendered sessions/welcome.html.erb (Duration: 9.2ms | Allocations: 1359)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 1.0ms | Allocations: 2551)
+
+
+Started GET "/login" for ::1 at 2020-05-26 14:23:36 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 3.0ms | Allocations: 468)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 1182)
+
+
+Started POST "/login" for ::1 at 2020-05-26 14:23:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZwfgJyCEszC7ocC/ZzUHp05N4yr9t0agQMJRuS+Ht/QeUoxfeFfM9kVZLee1YtLYyVUsEECfSBpgQBTqcBOUaQ==", "email"=>"rer@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "rer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 1451)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-05-26 14:24:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZwfgJyCEszC7ocC/ZzUHp05N4yr9t0agQMJRuS+Ht/QeUoxfeFfM9kVZLee1YtLYyVUsEECfSBpgQBTqcBOUaQ==", "email"=>"marc@marc.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "marc@marc.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:8:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 998)
+
+
+Started GET "/login" for ::1 at 2020-05-26 14:24:20 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb
+  Rendered sessions/new.html.erb (Duration: 1.1ms | Allocations: 257)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 829)
+
+
