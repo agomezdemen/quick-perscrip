@@ -7,8 +7,13 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
-    session[:patient_id] = @patient.id
-    redirect_to '/welcome'
+    if @patient.valid?
+      @patient.save
+      session[:patient_id] = @patient.id
+      redirect_to '/welcome'
+    else
+      redirect_to new_patient_path
+    end
   end
 
   private

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
     @patient = Patient.find_by(email: params[:email])
     if @patient && @patient.authenticate(params[:password])
-       sessions[:patient_id] = @patient.id
+       session[:patient_id] = @patient.id
        redirect_to '/welcome'
     else
        redirect_to '/login'
