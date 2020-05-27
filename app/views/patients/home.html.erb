@@ -1,0 +1,7 @@
+<h1>Welcome to Quick Prescrip for patients</h1>
+
+<% if logged_in? %>
+    <h1>You are Logged In, <%= current_patient.name %></h1>
+<%end%>
+<%= button_to "Login", '/sessions/login', method: :get%>
+<%= button_to "Sign Up", '/new', method: :get%>

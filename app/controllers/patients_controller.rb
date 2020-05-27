@@ -1,5 +1,8 @@
 class PatientsController < ApplicationController
   skip_before_action :authorized, only: [:new, :create]
+  def home
+    render '/patients/home'
+  end
   
   def new
     @patient = Patient.new

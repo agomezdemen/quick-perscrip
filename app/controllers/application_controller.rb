@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
     helper_method :logged_in?
 
     def current_patient    
-        Patient.find_by(id: session[:patient_id])  
+       @patient = Patient.find(session[:patient_id])  
     end
 
     def logged_in?
-        !current_patient.nil?  
+        !!current_patient 
     end
 
     def authorized
