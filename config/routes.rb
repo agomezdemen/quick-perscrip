@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'sessions/login'
   get 'sessions/welcome'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :patients, only: [:new, :create]
+  resources :patients, only: [:new, :create, :show]
   resources :doctors
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

@@ -2113,3 +2113,191 @@ Processing by SessionsController#welcome as HTML
 Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 1754)
 
 
+Started GET "/patients/new" for ::1 at 2020-05-26 19:14:25 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 38.2ms | Allocations: 2139)
+Completed 200 OK in 227ms (Views: 77.1ms | ActiveRecord: 9.3ms | Allocations: 9582)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 19:14:42 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"rNy2VPTYuHgvtnmPLf+YhZLpFdnMweAMOgW0kJdsVYmMJHVxqDjQrnpLqNXgYkRZgWt0GSA7eXEryVzpuA5CBA==", "patient"=>{"name"=>"squimp", "email"=>"squimp@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "squimp@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:10:in `create'
+Redirected to http://localhost:3000/patients/new
+Completed 302 Found in 17ms (ActiveRecord: 1.0ms | Allocations: 2650)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 19:14:42 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 2.6ms | Allocations: 450)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1034)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 19:14:57 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"0AisvwuFCw1DHe174CyVi8SQta+LhydyFtpjCZFQWx3w8G+aV2Vj2xbgPCEtsUlX1xLUb2d9vg8HFotwvjJMkA==", "patient"=>{"name"=>"squimp", "email"=>"squimp@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "squimp@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:10:in `create'
+  [1m[36mCACHE Patient Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "squimp@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:11:in `create'
+  [1m[36mPatient Create (1.5ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "squimp"], ["email", "squimp@gmail.com"], ["password_digest", "$2a$12$Rza9FlN00WQCHOhbLnVvPOL2uRigjyY9Wu0EZnGHcZzC.F0rO0YNO"], ["created_at", "2020-05-27 00:14:58.245207"], ["updated_at", "2020-05-27 00:14:58.245207"]]
+  ↳ app/controllers/patients_controller.rb:11:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 2.9ms | Allocations: 5161)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"patients"}, missing required keys: [:id]):
+  
+app/controllers/patients_controller.rb:13:in `create'
+Started POST "/patients" for ::1 at 2020-05-26 19:17:17 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"0AisvwuFCw1DHe174CyVi8SQta+LhydyFtpjCZFQWx3w8G+aV2Vj2xbgPCEtsUlX1xLUb2d9vg8HFotwvjJMkA==", "patient"=>{"name"=>"squimp", "email"=>"squimp@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "squimp@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:14:in `create'
+Redirected to http://localhost:3000/patients/new
+Completed 302 Found in 552ms (ActiveRecord: 5.2ms | Allocations: 8994)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 19:17:17 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 1.5ms | Allocations: 463)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 19:17:27 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"ASDdcIg3Wfm2Fe3JzLSb/DTJ7HSIkctyLTCenlU9MnQh2B5V1NcxL+PoPJMBKUcgJ0uNtGRrUg88/Hbnel8l+Q==", "patient"=>{"name"=>"squimp", "email"=>"squimp@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "squimp@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:14:in `create'
+Redirected to http://localhost:3000/patients/new
+Completed 302 Found in 383ms (ActiveRecord: 0.3ms | Allocations: 1794)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 19:17:28 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 1.5ms | Allocations: 450)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 1028)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 19:17:52 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"3+wRZxIjR39guyWEb8Wj1fES7NLllidAHdnkSoyHXfz/FNJCTsMvqTVG9N6iWH8J4pCNEglsvj0MFQwzo+VKcQ==", "patient"=>{"name"=>"sqump", "email"=>"sqump@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "sqump@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:14:in `create'
+  [1m[36mCACHE Patient Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "sqump@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[36mPatient Create (0.8ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "sqump"], ["email", "sqump@gmail.com"], ["password_digest", "$2a$12$fZwPyl4B9rVp1UybRm7c3e/OgfdtAc3t8M0p6VykZB1amIdk/JX/6"], ["created_at", "2020-05-27 00:17:52.889152"], ["updated_at", "2020-05-27 00:17:52.889152"]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 441ms (ActiveRecord: 3.5ms | Allocations: 4989)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"patients"}, missing required keys: [:id]):
+  
+app/controllers/patients_controller.rb:17:in `create'
+Started POST "/patients" for ::1 at 2020-05-26 19:18:15 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"3+wRZxIjR39guyWEb8Wj1fES7NLllidAHdnkSoyHXfz/FNJCTsMvqTVG9N6iWH8J4pCNEglsvj0MFQwzo+VKcQ==", "patient"=>{"name"=>"sqump", "email"=>"sqump@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "sqump@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:14:in `create'
+Redirected to http://localhost:3000/patients/new
+Completed 302 Found in 405ms (ActiveRecord: 2.4ms | Allocations: 7886)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-26 19:18:15 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 3.6ms | Allocations: 460)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 1193)
+
+
+Started POST "/patients" for ::1 at 2020-05-26 19:18:21 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"CVVb6YAdyi18AtGf9UFafkfz6OTUncU/5V/upTbEtt4prZjM3P2i+yn/AMU43IaiVHGJJDhnXEL0kwbcGaahUw==", "patient"=>{"name"=>"d", "email"=>"d", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "d"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:14:in `create'
+  [1m[36mCACHE Patient Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "d"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[36mPatient Create (0.8ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "d"], ["email", "d"], ["password_digest", "$2a$12$T3GUVK2CYJeHTq969/NAI.cywLYzxzBc7OVpdnNuXKTkn9AzAcJUa"], ["created_at", "2020-05-27 00:18:21.718913"], ["updated_at", "2020-05-27 00:18:21.718913"]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 840ms (ActiveRecord: 2.4ms | Allocations: 101767)
+
+
+  
+NameError (undefined local variable or method `show_patient_path' for #<PatientsController:0x00007f882e44e0e0>
+Did you mean?  new_patient_path):
+  
+app/controllers/patients_controller.rb:17:in `create'
+Started POST "/patients" for ::1 at 2020-05-26 19:20:07 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"CVVb6YAdyi18AtGf9UFafkfz6OTUncU/5V/upTbEtt4prZjM3P2i+yn/AMU43IaiVHGJJDhnXEL0kwbcGaahUw==", "patient"=>{"name"=>"do", "email"=>"do", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "do"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:14:in `create'
+  [1m[36mCACHE Patient Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "do"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[36mPatient Create (1.1ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "do"], ["email", "do"], ["password_digest", "$2a$12$iFcNoxPrVEsxIdZbNWXDq.eR7gmR.oD5rhk3nzpb7CF95GoYYsmFe"], ["created_at", "2020-05-27 00:20:07.564833"], ["updated_at", "2020-05-27 00:20:07.564833"]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 3.5ms | Allocations: 10709)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"patients"}, missing required keys: [:id]):
+  
+app/controllers/patients_controller.rb:17:in `create'
+Started POST "/patients" for ::1 at 2020-05-26 19:20:49 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"CVVb6YAdyi18AtGf9UFafkfz6OTUncU/5V/upTbEtt4prZjM3P2i+yn/AMU43IaiVHGJJDhnXEL0kwbcGaahUw==", "patient"=>{"name"=>"doe", "email"=>"doe", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "doe"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:14:in `create'
+  [1m[36mCACHE Patient Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "doe"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[36mPatient Create (0.6ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "doe"], ["email", "doe"], ["password_digest", "$2a$12$Q9dheQvpuePIMM6j.1YMheRdIVjXZvSXgvI.lDoSWg8dBSshmar5W"], ["created_at", "2020-05-27 00:20:50.475848"], ["updated_at", "2020-05-27 00:20:50.475848"]]
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:15:in `create'
+Redirected to http://localhost:3000/patients/10
+Completed 302 Found in 439ms (ActiveRecord: 6.0ms | Allocations: 11847)
+
+
+Started GET "/patients/10" for ::1 at 2020-05-26 19:20:50 -0500
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mPatient Load (0.4ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `current_patient'
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:9:in `show'
+  Rendering patients/show.html.erb
+  Rendered patients/show.html.erb (Duration: 2.6ms | Allocations: 114)
+Completed 200 OK in 17ms (Views: 9.3ms | ActiveRecord: 0.6ms | Allocations: 3254)
+
+

@@ -5,12 +5,16 @@ class PatientsController < ApplicationController
     @patient = Patient.new
   end
 
+  def show
+    @patient = Patient.find(params[:id])
+  end
+
   def create
     @patient = Patient.new(patient_params)
     if @patient.valid?
       @patient.save
       session[:patient_id] = @patient.id
-      redirect_to '/welcome'
+      redirect_to @patient
     else
       redirect_to new_patient_path
     end
