@@ -1,16 +1,17 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create, :welcome]
+  # skip_before_action :authorized, only: [:new, :create, :welcome]
 
   def new
   end
 
   def create
+    binding.pry
     @patient = Patient.find_by(email: params[:email])
     if @patient && @patient.authenticate(params[:password])
        session[:patient_id] = @patient.id
-       redirect_to '/welcome'
+       redirect_to 'patients/home'
     else
-       redirect_to '/login'
+       redirect_to 'patients/login'
     end
   end
 

@@ -18,6 +18,9 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
+  def login
+  end
+
   def create
     @patient = Patient.new(patient_params)
     if @patient.valid?

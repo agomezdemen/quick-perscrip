@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
     def new
         @doctors = Doctor.all
-        @appointment = Appointment.new
+        @appointment = Appointment.new(patient)
     end
 
     def create
@@ -12,6 +12,6 @@ class AppointmentsController < ApplicationController
     private
 
     def appointment_params
-        params.require(:appointment).permit(:doctor_id, :patient_id)
+        params.require(:appointment).permit(:apppintment_time, :doctor_id, :patient_id)
     end
 end

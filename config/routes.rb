@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   get 'patients/home'
   get 'patients/new'
   get 'patients/create'
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/login'
+  get 'patients/login', to: 'patients#login'
+  post '/login', to: 'sessions#create'
   get 'sessions/welcome'
   get 'appointments/new'
   get 'prescriptions/new'
@@ -20,8 +19,7 @@ Rails.application.routes.draw do
   resources :licenses
   resources :patients, only: [:new, :create, :show, :home]
   resources :doctors
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
+  
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
 
