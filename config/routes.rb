@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'sessions#welcome'
+  get 'doctors/home'
   get 'doctors/new'
   get 'doctors/create'
+  get '/patients' => 'patients#index'
   get 'patients/home'
   get 'patients/new'
   get 'patients/create'

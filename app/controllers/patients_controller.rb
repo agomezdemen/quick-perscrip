@@ -1,5 +1,10 @@
 class PatientsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  # skip_before_action :authorized, only: [:new, :create]
+
+  def index
+    @patients = Patient.all
+  end
+
   def home
     render '/patients/home'
   end
@@ -9,6 +14,7 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @doctors = Doctor.all
     @patient = Patient.find(params[:id])
   end
 
