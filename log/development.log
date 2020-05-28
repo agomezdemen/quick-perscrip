@@ -4099,3 +4099,678 @@ Processing by DoctorsController#show as HTML
 Completed 200 OK in 68ms (Views: 13.3ms | ActiveRecord: 0.6ms | Allocations: 3150)
 
 
+Started GET "/doctors/1" for ::1 at 2020-05-27 20:56:28 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (3.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:13:in `show'
+  Rendering doctors/show.html.erb
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/doctors/show.html.erb:7
+  Rendered doctors/show.html.erb (Duration: 20.5ms | Allocations: 4915)
+Completed 200 OK in 92ms (Views: 32.8ms | ActiveRecord: 5.6ms | Allocations: 18770)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-27 20:56:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/appointments/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/appointments/new" for ::1 at 2020-05-27 20:57:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/appointments/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/appointments/new" for ::1 at 2020-05-27 20:58:23 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  Rendered appointments/new.html.erb (Duration: 596.4ms | Allocations: 73513)
+Completed 500 Internal Server Error in 643ms (ActiveRecord: 0.9ms | Allocations: 79780)
+
+
+  
+ActionView::Template::Error (undefined method `appointments_path' for #<#<Class:0x00007fed5d389260>:0x00007fed5dc86818>
+Did you mean?  appointments_new_path):
+    1: <h1>Create Appointment</h1>
+    2: <%= form_for @appointment do |f| %>
+    3:     <label> Doctor name:</label><br>
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     <label> Patient name:</label><br>
+  
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-27 20:59:01 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  Rendered appointments/new.html.erb (Duration: 319.6ms | Allocations: 73927)
+Completed 500 Internal Server Error in 362ms (ActiveRecord: 0.9ms | Allocations: 81148)
+
+
+  
+ActionView::Template::Error (undefined method `appointments_path' for #<#<Class:0x00007fe10ecf3b58>:0x00007fe10ecf0d18>
+Did you mean?  appointments_new_path):
+    1: <h1>Create Appointment</h1>
+    2: <%= form_for @appointment do |f| %>
+    3:     <label> Doctor name:</label><br>
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     <label> Patient name:</label><br>
+  
+app/views/appointments/new.html.erb:2
+Started GET "/patients/1" for ::1 at 2020-05-27 21:00:34 -0500
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatient Load (0.9ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:18:in `show'
+  Rendering patients/show.html.erb
+  [1m[36mDoctor Load (1.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/patients/show.html.erb:7
+  Rendered patients/show.html.erb (Duration: 21.8ms | Allocations: 5499)
+Completed 200 OK in 100ms (Views: 49.7ms | ActiveRecord: 7.0ms | Allocations: 17009)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-27 21:00:37 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  Rendered appointments/new.html.erb (Duration: 433.1ms | Allocations: 73311)
+Completed 500 Internal Server Error in 436ms (ActiveRecord: 0.0ms | Allocations: 73879)
+
+
+  
+ActionView::Template::Error (undefined method `appointments_path' for #<#<Class:0x00007fe10ecf3b58>:0x00007fe10eb70a88>
+Did you mean?  appointments_new_path):
+    1: <h1>Create Appointment</h1>
+    2: <%= form_for @appointment do |f| %>
+    3:     <label> Doctor name:</label><br>
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     <label> Patient name:</label><br>
+  
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-27 21:06:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered appointments/new.html.erb (Duration: 428.1ms | Allocations: 83878)
+Completed 500 Internal Server Error in 461ms (ActiveRecord: 0.9ms | Allocations: 90795)
+
+
+  
+ActionView::Template::Error (undefined method `appointments_path' for #<#<Class:0x00007fe10da40380>:0x00007fe10eaeb158>
+Did you mean?  appointments_new_path):
+    1: <h1>Create Appointment</h1>
+    2: <%= form_for @appointment do |f| %>
+    3:     <label> Doctor name:</label><br>
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     <label> Patient name:</label><br>
+  
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-27 21:06:49 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Doctor Load (0.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered appointments/new.html.erb (Duration: 367.4ms | Allocations: 79600)
+Completed 500 Internal Server Error in 372ms (ActiveRecord: 0.3ms | Allocations: 80173)
+
+
+  
+ActionView::Template::Error (undefined method `appointments_path' for #<#<Class:0x00007fe10da40380>:0x00007fe10e334a68>
+Did you mean?  appointments_new_path):
+    1: <h1>Create Appointment</h1>
+    2: <%= form_for @appointment do |f| %>
+    3:     <label> Doctor name:</label><br>
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     <label> Patient name:</label><br>
+  
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-27 21:12:19 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (1.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  Rendered appointments/new.html.erb (Duration: 36.2ms | Allocations: 7778)
+Completed 200 OK in 83ms (Views: 43.4ms | ActiveRecord: 3.2ms | Allocations: 18120)
+
+
+Started POST "/appointments" for ::1 at 2020-05-27 21:12:37 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"tz3fKujftAt48WZzC1jSYi7U9OoE/QdT7eDw62w+wiotUi81kKKuk2HwWrPmMQmWhaQk1v7jGs3CtQOjUu6qBA==", "appointment"=>{"doctor_id"=>"1"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+No template found for AppointmentsController#create, rendering head :no_content
+Completed 204 No Content in 133ms (ActiveRecord: 0.6ms | Allocations: 12012)
+
+
+Started POST "/appointments" for ::1 at 2020-05-27 21:12:43 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"tz3fKujftAt48WZzC1jSYi7U9OoE/QdT7eDw62w+wiotUi81kKKuk2HwWrPmMQmWhaQk1v7jGs3CtQOjUu6qBA==", "appointment"=>{"doctor_id"=>"1"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+No template found for AppointmentsController#create, rendering head :no_content
+Completed 204 No Content in 26ms (ActiveRecord: 0.6ms | Allocations: 3908)
+
+
+Started POST "/appointments" for ::1 at 2020-05-27 21:12:44 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"tz3fKujftAt48WZzC1jSYi7U9OoE/QdT7eDw62w+wiotUi81kKKuk2HwWrPmMQmWhaQk1v7jGs3CtQOjUu6qBA==", "appointment"=>{"doctor_id"=>"1"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:9:in `create'
+No template found for AppointmentsController#create, rendering head :no_content
+Completed 204 No Content in 20ms (ActiveRecord: 0.6ms | Allocations: 3915)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-27 21:34:41 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.8ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 81.1ms | Allocations: 13692)
+Completed 200 OK in 142ms (Views: 83.5ms | ActiveRecord: 6.5ms | Allocations: 31173)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-27 21:36:03 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (1.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.2ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 21.5ms | Allocations: 2841)
+Completed 200 OK in 36ms (Views: 30.8ms | ActiveRecord: 1.9ms | Allocations: 4613)
+
+
+Started GET "/" for ::1 at 2020-05-27 21:36:37 -0500
+  
+ArgumentError (Before process_action callback :authorized has not been defined):
+  
+app/controllers/sessions_controller.rb:2:in `<class:SessionsController>'
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2020-05-27 21:36:41 -0500
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  Rendered sessions/welcome.html.erb (Duration: 1.7ms | Allocations: 224)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 1346)
+
+
+Started GET "/doctors/home" for ::1 at 2020-05-27 21:36:45 -0500
+Processing by DoctorsController#home as HTML
+  Rendering doctors/home.html.erb
+  Rendered doctors/home.html.erb (Duration: 1.9ms | Allocations: 216)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 1346)
+
+
+Started GET "/doctors/1" for ::1 at 2020-05-27 21:36:53 -0500
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:13:in `show'
+  Rendering doctors/show.html.erb
+  [1m[36mPatient Load (0.6ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/doctors/show.html.erb:7
+  Rendered doctors/show.html.erb (Duration: 6.4ms | Allocations: 874)
+Completed 200 OK in 15ms (Views: 7.2ms | ActiveRecord: 1.0ms | Allocations: 2603)
+
+
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:37:03 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:38:55 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:38:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:39:01 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:39:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:40:24 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:43:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescription/new" for ::1 at 2020-05-27 21:43:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/prescription/new"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/prescriptions/new" for ::1 at 2020-05-27 21:44:10 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (1.3ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 132.2ms | Allocations: 12999)
+Completed 200 OK in 212ms (Views: 141.3ms | ActiveRecord: 7.0ms | Allocations: 29235)
+
+
+Started GET "/patients/1" for ::1 at 2020-05-27 21:47:07 -0500
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatient Load (0.5ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:18:in `show'
+  Rendering patients/show.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/patients/show.html.erb:7
+  Rendered patients/show.html.erb (Duration: 5.2ms | Allocations: 862)
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 0.8ms | Allocations: 2996)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-27 21:47:09 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  Rendered appointments/new.html.erb (Duration: 8.3ms | Allocations: 1293)
+Completed 200 OK in 31ms (Views: 11.8ms | ActiveRecord: 1.9ms | Allocations: 6364)
+
+
+Started GET "/doctors/1" for ::1 at 2020-05-27 21:47:16 -0500
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:13:in `show'
+  Rendering doctors/show.html.erb
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/doctors/show.html.erb:7
+  Rendered doctors/show.html.erb (Duration: 5.7ms | Allocations: 873)
+Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 0.7ms | Allocations: 2682)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-27 21:47:24 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.2ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 11.3ms | Allocations: 2626)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.6ms | Allocations: 3250)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-27 21:47:32 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.2ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 9.8ms | Allocations: 2609)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.6ms | Allocations: 3225)
+
+
+Started POST "/prescriptions" for ::1 at 2020-05-27 21:48:41 -0500
+Processing by PrescriptionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ixg15M5BX4YCsLOjoQYwsFQQOX2mMKsCbja/Svh0Vbchithh8tzc/acyKPZd2wEZ3ariLFAKcCvCt45jCRAKNg==", "prescription"=>{"doctor_id"=>"1", "patient_id"=>"1", "doctor_name"=>"Steven Brule", "dosage"=>"200"}, "commit"=>"Create Prescription"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/prescriptions_controller.rb:11:in `create'
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/prescriptions_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/prescriptions_controller.rb:11:in `create'
+No template found for PrescriptionsController#create, rendering head :no_content
+Completed 204 No Content in 32ms (ActiveRecord: 0.5ms | Allocations: 7650)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-27 21:50:13 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.3ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 30.5ms | Allocations: 2611)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.7ms | Allocations: 3230)
+
+

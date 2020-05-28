@@ -11,7 +11,13 @@ Rails.application.routes.draw do
   get 'sessions/create'
   get 'sessions/login'
   get 'sessions/welcome'
+  get 'appointments/new'
+  get 'prescriptions/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :appointments
+  resources :drugs
+  resources :prescriptions
+  resources :licenses
   resources :patients, only: [:new, :create, :show, :home]
   resources :doctors
   get 'login', to: 'sessions#new'

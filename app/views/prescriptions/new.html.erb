@@ -1,0 +1,14 @@
+<h1>Create Prescription</h1>
+<%= form_for @prescription do |f| %>
+    <label> Doctor name: </label><br>
+    <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    <label> Patient name: </label><br>
+    <%= f.collection_select :patient_id, @patients, :id, :name %><br>
+    <label> Doctor signature: </label><br>
+    <%= f.text_field :doctor_name %><br>
+    <label> Dosage: </label><br>
+    <%= f.text_field :dosage %><br>
+    <label> Drug name: </label><br>
+    <%= f.collection_select :drug_id, @drugs, :id, :name %><br>
+    <%= f.submit %>
+<%end%>
