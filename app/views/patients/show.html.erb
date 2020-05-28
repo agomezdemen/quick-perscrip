@@ -1,0 +1,14 @@
+<h1> Patient <%= @patient.name %></h1>
+
+<h2> Patient appointments: </h2>
+<h2> Patient prescriptions: </h2>
+
+<h3> Patient doctors: </h3>
+<% @doctors.each do |doctor| %>
+    <label> Doctor name: </label>
+    <%= doctor.name %><br>
+    <label> Doctor email: </label>
+    <%= doctor.email %><br>
+<% end %>
+
+<%= button_to "Create an Appointment", '/appointments/new', method: :get%>
