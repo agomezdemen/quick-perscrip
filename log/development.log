@@ -9378,3 +9378,1138 @@ Migrating to AddAppointmentDatetimeToAppointments (20200528181651)
   [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mLicense Load (0.3ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mLicense Load (0.2ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."number" = ? LIMIT ?[0m  [["number", 1234568], ["LIMIT", 1]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePatients (20200526010926)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200526010926"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDoctors (20200526011027)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "license_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200526011027"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLicenses (20200527195124)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "licenses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "doctor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527195124"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAppointments (20200527200144)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "doctor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527200144"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrugs (20200527202245)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "drugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527202245"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePrescriptions (20200527202830)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "prescriptions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "doctor_name" varchar, "patient_name" varchar, "dosage" integer, "doctor_id" integer, "patient_id" integer, "drug_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527202830"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAppointmentDatetimeToAppointments (20200528181651)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (129.6ms)[0m  [1m[35mALTER TABLE "appointments" ADD "appointment_datetime" datetime[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200528181651"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-29 05:09:47.793185"], ["updated_at", "2020-05-29 05:09:47.793185"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (6.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Panama Punch"], ["created_at", "2020-05-29 05:10:14.241288"], ["updated_at", "2020-05-29 05:10:14.241288"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pineapple Sage"], ["created_at", "2020-05-29 05:10:14.275258"], ["updated_at", "2020-05-29 05:10:14.275258"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Green Cobra"], ["created_at", "2020-05-29 05:10:14.469475"], ["updated_at", "2020-05-29 05:10:14.469475"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lemonade"], ["created_at", "2020-05-29 05:10:14.568339"], ["updated_at", "2020-05-29 05:10:14.568339"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chronic"], ["created_at", "2020-05-29 05:10:14.577774"], ["updated_at", "2020-05-29 05:10:14.577774"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colfax Platinum"], ["created_at", "2020-05-29 05:10:14.586760"], ["updated_at", "2020-05-29 05:10:14.586760"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Whitewalker OG"], ["created_at", "2020-05-29 05:10:14.596805"], ["updated_at", "2020-05-29 05:10:14.596805"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.9ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Candy Skunk"], ["created_at", "2020-05-29 05:10:14.603214"], ["updated_at", "2020-05-29 05:10:14.603214"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sonoma Glue"], ["created_at", "2020-05-29 05:10:14.615037"], ["updated_at", "2020-05-29 05:10:14.615037"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Heavy OG"], ["created_at", "2020-05-29 05:10:14.621445"], ["updated_at", "2020-05-29 05:10:14.621445"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mr. Nice Guy"], ["created_at", "2020-05-29 05:10:14.626734"], ["updated_at", "2020-05-29 05:10:14.626734"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Strawberry Shortcake"], ["created_at", "2020-05-29 05:10:14.632022"], ["updated_at", "2020-05-29 05:10:14.632022"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cherry Cheese"], ["created_at", "2020-05-29 05:10:14.638223"], ["updated_at", "2020-05-29 05:10:14.638223"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Hardcore Grapes"], ["created_at", "2020-05-29 05:10:14.644727"], ["updated_at", "2020-05-29 05:10:14.644727"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dutch Treat"], ["created_at", "2020-05-29 05:10:14.650248"], ["updated_at", "2020-05-29 05:10:14.650248"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Candy Skunk"], ["created_at", "2020-05-29 05:10:14.659525"], ["updated_at", "2020-05-29 05:10:14.659525"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.3ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blackberry Soda"], ["created_at", "2020-05-29 05:10:14.667897"], ["updated_at", "2020-05-29 05:10:14.667897"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mendo Breath"], ["created_at", "2020-05-29 05:10:14.676133"], ["updated_at", "2020-05-29 05:10:14.676133"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Whitewalker OG"], ["created_at", "2020-05-29 05:10:14.683055"], ["updated_at", "2020-05-29 05:10:14.683055"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Skywalker OG"], ["created_at", "2020-05-29 05:10:14.690219"], ["updated_at", "2020-05-29 05:10:14.690219"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Clementine"], ["created_at", "2020-05-29 05:10:14.696493"], ["updated_at", "2020-05-29 05:10:14.696493"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tangie"], ["created_at", "2020-05-29 05:10:14.702940"], ["updated_at", "2020-05-29 05:10:14.702940"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cherry Lime"], ["created_at", "2020-05-29 05:10:14.710206"], ["updated_at", "2020-05-29 05:10:14.710206"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Satellite OG"], ["created_at", "2020-05-29 05:10:14.718818"], ["updated_at", "2020-05-29 05:10:14.718818"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cheese"], ["created_at", "2020-05-29 05:10:14.726918"], ["updated_at", "2020-05-29 05:10:14.726918"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colfax Cookies"], ["created_at", "2020-05-29 05:10:14.732348"], ["updated_at", "2020-05-29 05:10:14.732348"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Alien Diesel"], ["created_at", "2020-05-29 05:10:14.738522"], ["updated_at", "2020-05-29 05:10:14.738522"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lemon Skunk"], ["created_at", "2020-05-29 05:10:14.754558"], ["updated_at", "2020-05-29 05:10:14.754558"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chem Berry"], ["created_at", "2020-05-29 05:10:14.764808"], ["updated_at", "2020-05-29 05:10:14.764808"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.9ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Presidential OG"], ["created_at", "2020-05-29 05:10:14.771997"], ["updated_at", "2020-05-29 05:10:14.771997"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mojito"], ["created_at", "2020-05-29 05:12:18.906389"], ["updated_at", "2020-05-29 05:12:18.906389"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Super Glue"], ["created_at", "2020-05-29 05:12:18.913439"], ["updated_at", "2020-05-29 05:12:18.913439"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Candyland"], ["created_at", "2020-05-29 05:12:18.919922"], ["updated_at", "2020-05-29 05:12:18.919922"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Clementine"], ["created_at", "2020-05-29 05:12:18.925958"], ["updated_at", "2020-05-29 05:12:18.925958"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "OG Salad"], ["created_at", "2020-05-29 05:12:18.930631"], ["updated_at", "2020-05-29 05:12:18.930631"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ONAC OG"], ["created_at", "2020-05-29 05:12:18.938688"], ["updated_at", "2020-05-29 05:12:18.938688"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.9ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blackberry Soda"], ["created_at", "2020-05-29 05:12:18.944687"], ["updated_at", "2020-05-29 05:12:18.944687"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Double Dutch Bus"], ["created_at", "2020-05-29 05:12:18.950884"], ["updated_at", "2020-05-29 05:12:18.950884"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Soul Assasin OG"], ["created_at", "2020-05-29 05:12:18.956802"], ["updated_at", "2020-05-29 05:12:18.956802"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gorilla Princess"], ["created_at", "2020-05-29 05:12:18.962378"], ["updated_at", "2020-05-29 05:12:18.962378"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pitbull"], ["created_at", "2020-05-29 05:12:18.967474"], ["updated_at", "2020-05-29 05:12:18.967474"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cherry Cheese"], ["created_at", "2020-05-29 05:12:18.974615"], ["updated_at", "2020-05-29 05:12:18.974615"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Panama Punch"], ["created_at", "2020-05-29 05:12:18.983940"], ["updated_at", "2020-05-29 05:12:18.983940"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diablo OG"], ["created_at", "2020-05-29 05:12:18.990016"], ["updated_at", "2020-05-29 05:12:18.990016"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gelato"], ["created_at", "2020-05-29 05:12:18.995923"], ["updated_at", "2020-05-29 05:12:18.995923"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nug Salad"], ["created_at", "2020-05-29 05:12:19.008432"], ["updated_at", "2020-05-29 05:12:19.008432"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Godzilla Glue"], ["created_at", "2020-05-29 05:12:19.037525"], ["updated_at", "2020-05-29 05:12:19.037525"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chronic"], ["created_at", "2020-05-29 05:12:19.045521"], ["updated_at", "2020-05-29 05:12:19.045521"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Queen Dream"], ["created_at", "2020-05-29 05:12:19.051158"], ["updated_at", "2020-05-29 05:12:19.051158"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rainbow Sherbet"], ["created_at", "2020-05-29 05:12:19.057224"], ["updated_at", "2020-05-29 05:12:19.057224"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Double Dutch Bus"], ["created_at", "2020-05-29 05:12:19.062525"], ["updated_at", "2020-05-29 05:12:19.062525"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Strawberry Banana"], ["created_at", "2020-05-29 05:12:19.068010"], ["updated_at", "2020-05-29 05:12:19.068010"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sour Cheese"], ["created_at", "2020-05-29 05:12:19.073528"], ["updated_at", "2020-05-29 05:12:19.073528"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sugar Momma"], ["created_at", "2020-05-29 05:12:19.085189"], ["updated_at", "2020-05-29 05:12:19.085189"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Private Reserve"], ["created_at", "2020-05-29 05:12:19.091168"], ["updated_at", "2020-05-29 05:12:19.091168"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.1ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sunset Sherbert"], ["created_at", "2020-05-29 05:12:19.098471"], ["updated_at", "2020-05-29 05:12:19.098471"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lucky Charms"], ["created_at", "2020-05-29 05:12:19.106757"], ["updated_at", "2020-05-29 05:12:19.106757"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Hardcore Grapes"], ["created_at", "2020-05-29 05:12:19.115862"], ["updated_at", "2020-05-29 05:12:19.115862"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Whitewalker OG"], ["created_at", "2020-05-29 05:12:19.124312"], ["updated_at", "2020-05-29 05:12:19.124312"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Queen Dream"], ["created_at", "2020-05-29 05:12:19.131084"], ["updated_at", "2020-05-29 05:12:19.131084"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chronic"], ["created_at", "2020-05-29 05:13:48.827284"], ["updated_at", "2020-05-29 05:13:48.827284"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Clementine"], ["created_at", "2020-05-29 05:13:48.834946"], ["updated_at", "2020-05-29 05:13:48.834946"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chocolate Hashberry"], ["created_at", "2020-05-29 05:13:48.843401"], ["updated_at", "2020-05-29 05:13:48.843401"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (2.3ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Boss Hog"], ["created_at", "2020-05-29 05:13:48.851882"], ["updated_at", "2020-05-29 05:13:48.851882"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sunset Sherbert"], ["created_at", "2020-05-29 05:13:48.863716"], ["updated_at", "2020-05-29 05:13:48.863716"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Presidential OG"], ["created_at", "2020-05-29 05:13:48.871454"], ["updated_at", "2020-05-29 05:13:48.871454"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chem Berry"], ["created_at", "2020-05-29 05:13:48.878004"], ["updated_at", "2020-05-29 05:13:48.878004"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Grapefruit Kush"], ["created_at", "2020-05-29 05:13:48.886567"], ["updated_at", "2020-05-29 05:13:48.886567"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Colfax Jack"], ["created_at", "2020-05-29 05:13:48.892661"], ["updated_at", "2020-05-29 05:13:48.892661"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Diablo OG"], ["created_at", "2020-05-29 05:13:48.903189"], ["updated_at", "2020-05-29 05:13:48.903189"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cherry Cheese"], ["created_at", "2020-05-29 05:13:48.911122"], ["updated_at", "2020-05-29 05:13:48.911122"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blue Dream"], ["created_at", "2020-05-29 05:13:48.919899"], ["updated_at", "2020-05-29 05:13:48.919899"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Super Glue"], ["created_at", "2020-05-29 05:13:48.927508"], ["updated_at", "2020-05-29 05:13:48.927508"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.1ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sour Cheese"], ["created_at", "2020-05-29 05:13:48.933516"], ["updated_at", "2020-05-29 05:13:48.933516"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cherry Cheese"], ["created_at", "2020-05-29 05:13:48.944533"], ["updated_at", "2020-05-29 05:13:48.944533"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blackwater OG"], ["created_at", "2020-05-29 05:13:48.950357"], ["updated_at", "2020-05-29 05:13:48.950357"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lemonade"], ["created_at", "2020-05-29 05:13:48.957302"], ["updated_at", "2020-05-29 05:13:48.957302"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mr. Nice Guy"], ["created_at", "2020-05-29 05:13:48.964843"], ["updated_at", "2020-05-29 05:13:48.964843"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (3.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Saturn OG"], ["created_at", "2020-05-29 05:13:48.994543"], ["updated_at", "2020-05-29 05:13:48.994543"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.1ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Alien Diesel"], ["created_at", "2020-05-29 05:13:49.010205"], ["updated_at", "2020-05-29 05:13:49.010205"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nug Salad"], ["created_at", "2020-05-29 05:13:49.050833"], ["updated_at", "2020-05-29 05:13:49.050833"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.9ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blueberry Tangie"], ["created_at", "2020-05-29 05:13:49.063656"], ["updated_at", "2020-05-29 05:13:49.063656"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Black Diamond OG"], ["created_at", "2020-05-29 05:13:49.073971"], ["updated_at", "2020-05-29 05:13:49.073971"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blackwater OG"], ["created_at", "2020-05-29 05:13:49.084137"], ["updated_at", "2020-05-29 05:13:49.084137"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Hardcore Grapes"], ["created_at", "2020-05-29 05:13:49.094600"], ["updated_at", "2020-05-29 05:13:49.094600"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Presidential OG"], ["created_at", "2020-05-29 05:13:49.106378"], ["updated_at", "2020-05-29 05:13:49.106378"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Candy Skunk"], ["created_at", "2020-05-29 05:13:49.114802"], ["updated_at", "2020-05-29 05:13:49.114802"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mr. Nice Guy"], ["created_at", "2020-05-29 05:13:49.127639"], ["updated_at", "2020-05-29 05:13:49.127639"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nectarine"], ["created_at", "2020-05-29 05:13:49.143793"], ["updated_at", "2020-05-29 05:13:49.143793"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cali Mist"], ["created_at", "2020-05-29 05:13:49.153567"], ["updated_at", "2020-05-29 05:13:49.153567"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLicense Load (0.4ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mLicense Load (0.4ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Strawberry Shortcake"], ["created_at", "2020-05-29 05:16:30.634135"], ["updated_at", "2020-05-29 05:16:30.634135"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blueberry Tangie"], ["created_at", "2020-05-29 05:16:30.639792"], ["updated_at", "2020-05-29 05:16:30.639792"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Heavy OG"], ["created_at", "2020-05-29 05:16:30.647219"], ["updated_at", "2020-05-29 05:16:30.647219"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chronic"], ["created_at", "2020-05-29 05:16:30.654272"], ["updated_at", "2020-05-29 05:16:30.654272"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "King Louis OG"], ["created_at", "2020-05-29 05:16:30.659595"], ["updated_at", "2020-05-29 05:16:30.659595"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "OG Chem"], ["created_at", "2020-05-29 05:16:30.668114"], ["updated_at", "2020-05-29 05:16:30.668114"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cheese"], ["created_at", "2020-05-29 05:16:30.674946"], ["updated_at", "2020-05-29 05:16:30.674946"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (5.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lemon Skunk"], ["created_at", "2020-05-29 05:16:30.680914"], ["updated_at", "2020-05-29 05:16:30.680914"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (2.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "XJ-13"], ["created_at", "2020-05-29 05:16:30.698237"], ["updated_at", "2020-05-29 05:16:30.698237"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Snozzberry OG"], ["created_at", "2020-05-29 05:16:30.928044"], ["updated_at", "2020-05-29 05:16:30.928044"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sunset Sherbert"], ["created_at", "2020-05-29 05:16:30.954508"], ["updated_at", "2020-05-29 05:16:30.954508"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blackwater OG"], ["created_at", "2020-05-29 05:16:30.963151"], ["updated_at", "2020-05-29 05:16:30.963151"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pink Lotus"], ["created_at", "2020-05-29 05:16:30.970596"], ["updated_at", "2020-05-29 05:16:30.970596"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lemon Meringue"], ["created_at", "2020-05-29 05:16:30.977456"], ["updated_at", "2020-05-29 05:16:30.977456"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rainbow Sherbet"], ["created_at", "2020-05-29 05:16:30.987807"], ["updated_at", "2020-05-29 05:16:30.987807"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Canna Sutra"], ["created_at", "2020-05-29 05:16:30.994895"], ["updated_at", "2020-05-29 05:16:30.994895"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cali Mist"], ["created_at", "2020-05-29 05:16:31.001743"], ["updated_at", "2020-05-29 05:16:31.001743"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "NY Sour Diesel"], ["created_at", "2020-05-29 05:16:31.012285"], ["updated_at", "2020-05-29 05:16:31.012285"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Black Diamond OG"], ["created_at", "2020-05-29 05:16:31.019317"], ["updated_at", "2020-05-29 05:16:31.019317"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ONAC OG"], ["created_at", "2020-05-29 05:16:31.027334"], ["updated_at", "2020-05-29 05:16:31.027334"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Green Cobra"], ["created_at", "2020-05-29 05:16:31.034053"], ["updated_at", "2020-05-29 05:16:31.034053"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lemonade"], ["created_at", "2020-05-29 05:16:31.043688"], ["updated_at", "2020-05-29 05:16:31.043688"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cherry Cheese"], ["created_at", "2020-05-29 05:16:31.050369"], ["updated_at", "2020-05-29 05:16:31.050369"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rainbow Sherbet"], ["created_at", "2020-05-29 05:16:31.056687"], ["updated_at", "2020-05-29 05:16:31.056687"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Soul Assasin OG"], ["created_at", "2020-05-29 05:16:31.068626"], ["updated_at", "2020-05-29 05:16:31.068626"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cherry Lime"], ["created_at", "2020-05-29 05:16:31.076367"], ["updated_at", "2020-05-29 05:16:31.076367"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Watermelon"], ["created_at", "2020-05-29 05:16:31.083843"], ["updated_at", "2020-05-29 05:16:31.083843"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pineapple Sage"], ["created_at", "2020-05-29 05:16:31.106191"], ["updated_at", "2020-05-29 05:16:31.106191"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ghost OG"], ["created_at", "2020-05-29 05:16:31.133474"], ["updated_at", "2020-05-29 05:16:31.133474"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (2.2ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Green Queen"], ["created_at", "2020-05-29 05:16:31.150574"], ["updated_at", "2020-05-29 05:16:31.150574"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLicense Load (0.5ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mLicense Load (0.2ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLicense Create (0.7ms)[0m  [1m[32mINSERT INTO "licenses" ("number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["number", 321564], ["created_at", "2020-05-29 05:23:54.910437"], ["updated_at", "2020-05-29 05:23:54.910437"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLicense Load (1.1ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLicense Load (0.3ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLicense Create (3.3ms)[0m  [1m[32mINSERT INTO "licenses" ("number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["number", 321554], ["created_at", "2020-05-29 05:29:32.292167"], ["updated_at", "2020-05-29 05:29:32.292167"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLicense Load (0.4ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePatients (20200526010926)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "patients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200526010926"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDoctors (20200526011027)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "license_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200526011027"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateLicenses (20200527195124)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "licenses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "doctor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527195124"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAppointments (20200527200144)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "patient_id" integer, "doctor_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527200144"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDrugs (20200527202245)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "drugs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527202245"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePrescriptions (20200527202830)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "prescriptions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "doctor_name" varchar, "patient_name" varchar, "dosage" integer, "doctor_id" integer, "patient_id" integer, "drug_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (21.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200527202830"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddAppointmentDatetimeToAppointments (20200528181651)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "appointments" ADD "appointment_datetime" datetime[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200528181651"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (593.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-29 05:30:39.625845"], ["updated_at", "2020-05-29 05:30:39.625845"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kings Reserve OG"], ["created_at", "2020-05-29 05:31:06.587528"], ["updated_at", "2020-05-29 05:31:06.587528"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lemon Meringue"], ["created_at", "2020-05-29 05:31:06.594999"], ["updated_at", "2020-05-29 05:31:06.594999"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sherbert"], ["created_at", "2020-05-29 05:31:06.601101"], ["updated_at", "2020-05-29 05:31:06.601101"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Banana OG"], ["created_at", "2020-05-29 05:31:06.606689"], ["updated_at", "2020-05-29 05:31:06.606689"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cheese"], ["created_at", "2020-05-29 05:31:06.611679"], ["updated_at", "2020-05-29 05:31:06.611679"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (1.2ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "XJ-13"], ["created_at", "2020-05-29 05:31:06.617241"], ["updated_at", "2020-05-29 05:31:06.617241"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Soul Assassin"], ["created_at", "2020-05-29 05:31:06.625034"], ["updated_at", "2020-05-29 05:31:06.625034"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Black Jack"], ["created_at", "2020-05-29 05:31:06.631172"], ["updated_at", "2020-05-29 05:31:06.631172"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blackberry Soda"], ["created_at", "2020-05-29 05:31:06.638005"], ["updated_at", "2020-05-29 05:31:06.638005"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Girl Scout Cookies"], ["created_at", "2020-05-29 05:31:06.645044"], ["updated_at", "2020-05-29 05:31:06.645044"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Moon Glue"], ["created_at", "2020-05-29 05:31:06.651728"], ["updated_at", "2020-05-29 05:31:06.651728"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Heavy OG"], ["created_at", "2020-05-29 05:31:06.658499"], ["updated_at", "2020-05-29 05:31:06.658499"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Snozzberry OG"], ["created_at", "2020-05-29 05:31:06.664249"], ["updated_at", "2020-05-29 05:31:06.664249"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blueberry Tangie"], ["created_at", "2020-05-29 05:31:06.669145"], ["updated_at", "2020-05-29 05:31:06.669145"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "XJ-13"], ["created_at", "2020-05-29 05:31:06.673710"], ["updated_at", "2020-05-29 05:31:06.673710"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Forbidden Fruit"], ["created_at", "2020-05-29 05:31:06.679689"], ["updated_at", "2020-05-29 05:31:06.679689"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Purple Punch"], ["created_at", "2020-05-29 05:31:06.686767"], ["updated_at", "2020-05-29 05:31:06.686767"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Alien Diesel"], ["created_at", "2020-05-29 05:31:06.692872"], ["updated_at", "2020-05-29 05:31:06.692872"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.5ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Whitewalker OG"], ["created_at", "2020-05-29 05:31:06.702477"], ["updated_at", "2020-05-29 05:31:06.702477"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.4ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pitbull"], ["created_at", "2020-05-29 05:31:06.707868"], ["updated_at", "2020-05-29 05:31:06.707868"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (2.0ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gelato"], ["created_at", "2020-05-29 05:31:06.713269"], ["updated_at", "2020-05-29 05:31:06.713269"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Strawberry Moonrocks"], ["created_at", "2020-05-29 05:31:06.723110"], ["updated_at", "2020-05-29 05:31:06.723110"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gorilla Princess"], ["created_at", "2020-05-29 05:31:06.730269"], ["updated_at", "2020-05-29 05:31:06.730269"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cali Mist"], ["created_at", "2020-05-29 05:31:06.790938"], ["updated_at", "2020-05-29 05:31:06.790938"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Queen Dream"], ["created_at", "2020-05-29 05:31:06.806369"], ["updated_at", "2020-05-29 05:31:06.806369"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (2.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Novicane Kush"], ["created_at", "2020-05-29 05:31:06.816671"], ["updated_at", "2020-05-29 05:31:06.816671"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jack Frost"], ["created_at", "2020-05-29 05:31:06.828808"], ["updated_at", "2020-05-29 05:31:06.828808"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.7ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "White Tahoe Cookies"], ["created_at", "2020-05-29 05:31:06.838745"], ["updated_at", "2020-05-29 05:31:06.838745"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.6ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Queen Dream"], ["created_at", "2020-05-29 05:31:06.846154"], ["updated_at", "2020-05-29 05:31:06.846154"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDrug Create (0.8ms)[0m  [1m[32mINSERT INTO "drugs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maui Jack"], ["created_at", "2020-05-29 05:31:06.854648"], ["updated_at", "2020-05-29 05:31:06.854648"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLicense Create (0.8ms)[0m  [1m[32mINSERT INTO "licenses" ("number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["number", 1234567], ["created_at", "2020-05-29 05:31:06.881052"], ["updated_at", "2020-05-29 05:31:06.881052"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLicense Create (1.5ms)[0m  [1m[32mINSERT INTO "licenses" ("number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["number", 1234568], ["created_at", "2020-05-29 05:31:06.893325"], ["updated_at", "2020-05-29 05:31:06.893325"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mLicense Load (0.7ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDrug Load (1.2ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-05-29 00:44:39 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  Rendered sessions/welcome.html.erb (Duration: 6.9ms | Allocations: 831)
+Completed 200 OK in 54ms (Views: 44.0ms | ActiveRecord: 0.0ms | Allocations: 4130)
+
+
+Started GET "/patients/home" for ::1 at 2020-05-29 00:45:07 -0500
+Processing by PatientsController#home as HTML
+  Rendering patients/home.html.erb
+  Rendered patients/home.html.erb (Duration: 2.0ms | Allocations: 211)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 1340)
+
+
+Started GET "/doctors/home" for ::1 at 2020-05-29 00:45:09 -0500
+Processing by DoctorsController#home as HTML
+  Rendering doctors/home.html.erb
+  Rendered doctors/home.html.erb (Duration: 1.5ms | Allocations: 210)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 1333)
+
+
+Started GET "/doctors/login" for ::1 at 2020-05-29 00:45:11 -0500
+Processing by DoctorsController#login as HTML
+  Rendering doctors/login.html.erb
+  Rendered sessions/_new.html.erb (Duration: 5.4ms | Allocations: 567)
+  Rendered doctors/login.html.erb (Duration: 12.4ms | Allocations: 873)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 1573)
+
+
+Started GET "/doctors/new" for ::1 at 2020-05-29 00:45:13 -0500
+Processing by DoctorsController#new as HTML
+  Rendering doctors/new.html.erb
+  Rendered doctors/new.html.erb (Duration: 343.4ms | Allocations: 181917)
+Completed 200 OK in 385ms (Views: 344.3ms | ActiveRecord: 1.4ms | Allocations: 191030)
+
+
+Started POST "/doctors" for ::1 at 2020-05-29 00:45:52 -0500
+Processing by DoctorsController#create as HTML
+  Parameters: {"authenticity_token"=>"44hz/zxOQ7iLbBxgOrnA1m6Tg7SOG9/xJVrtfCAviTQfCqHjSiG1nu0SpuGrzDRjypYV7QRy4Ldj2TlxywAThg==", "doctor"=>{"name"=>"a", "email"=>"a@gmail.com", "password"=>"[FILTERED]", "license_id"=>"1234567"}, "commit"=>"Create Doctor"}
+[31mUnpermitted parameter: :license_id[0m
+Completed 500 Internal Server Error in 781ms (ActiveRecord: 0.0ms | Allocations: 99068)
+
+
+  
+NameError (undefined local variable or method `parmas' for #<DoctorsController:0x00007f8b7a717098>
+Did you mean?  params):
+  
+app/controllers/doctors_controller.rb:21:in `create'
+Started POST "/doctors" for ::1 at 2020-05-29 00:47:19 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DoctorsController#create as HTML
+  Parameters: {"authenticity_token"=>"44hz/zxOQ7iLbBxgOrnA1m6Tg7SOG9/xJVrtfCAviTQfCqHjSiG1nu0SpuGrzDRjypYV7QRy4Ldj2TlxywAThg==", "doctor"=>{"name"=>"a", "email"=>"a@gmail.com", "password"=>"[FILTERED]", "license_id"=>"1234567"}, "commit"=>"Create Doctor"}
+[31mUnpermitted parameter: :license_id[0m
+  [1m[36mLicense Load (0.3ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."number" = ? LIMIT ?[0m  [["number", 1234567], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:21:in `create'
+  [1m[36mLicense Load (0.5ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:23:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+  [1m[36mDoctor Create (1.1ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "password_digest", "license_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["email", "a@gmail.com"], ["password_digest", "$2a$12$wKom2W9umrJwMBJV/WVxLO1MS5LL7mr1nmrk3uxMrv0KUJ.2FU9mm"], ["license_id", 1], ["created_at", "2020-05-29 05:47:19.877658"], ["updated_at", "2020-05-29 05:47:19.877658"]]
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+Redirected to http://localhost:3000/doctors/1
+Completed 302 Found in 450ms (ActiveRecord: 6.1ms | Allocations: 18049)
+
+
+Started GET "/doctors/1" for ::1 at 2020-05-29 00:47:19 -0500
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:13:in `show'
+  Rendering doctors/show.html.erb
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/doctors/show.html.erb:7
+  Rendered doctors/show.html.erb (Duration: 7.5ms | Allocations: 1151)
+Completed 200 OK in 24ms (Views: 8.9ms | ActiveRecord: 1.6ms | Allocations: 5155)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-29 00:48:00 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.1ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.9ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 33.6ms | Allocations: 6601)
+Completed 200 OK in 90ms (Views: 36.6ms | ActiveRecord: 5.1ms | Allocations: 16085)
+
+
+Started POST "/doctors" for ::1 at 2020-05-29 00:49:37 -0500
+Processing by DoctorsController#create as HTML
+  Parameters: {"authenticity_token"=>"44hz/zxOQ7iLbBxgOrnA1m6Tg7SOG9/xJVrtfCAviTQfCqHjSiG1nu0SpuGrzDRjypYV7QRy4Ldj2TlxywAThg==", "doctor"=>{"name"=>"a", "email"=>"b@gmail.com", "password"=>"[FILTERED]", "license_id"=>"1234567"}, "commit"=>"Create Doctor"}
+[31mUnpermitted parameter: :license_id[0m
+  [1m[36mLicense Load (0.1ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."number" = ? LIMIT ?[0m  [["number", 1234567], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:21:in `create'
+  [1m[36mLicense Load (0.1ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:23:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+  [1m[36mDoctor Create (0.5ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "password_digest", "license_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["email", "b@gmail.com"], ["password_digest", "$2a$12$vRFUqyntYrzKadDl9zwun.DdOtJNDWiBrRA5y22mq.ou3VHCPByim"], ["license_id", 1], ["created_at", "2020-05-29 05:49:37.455603"], ["updated_at", "2020-05-29 05:49:37.455603"]]
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+Redirected to http://localhost:3000/doctors/2
+Completed 302 Found in 372ms (ActiveRecord: 2.3ms | Allocations: 4455)
+
+
+Started GET "/doctors/2" for ::1 at 2020-05-29 00:49:37 -0500
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:13:in `show'
+  Rendering doctors/show.html.erb
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/doctors/show.html.erb:7
+  Rendered doctors/show.html.erb (Duration: 2.1ms | Allocations: 644)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1770)
+
+
+Started POST "/doctors" for ::1 at 2020-05-29 00:50:44 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DoctorsController#create as HTML
+  Parameters: {"authenticity_token"=>"44hz/zxOQ7iLbBxgOrnA1m6Tg7SOG9/xJVrtfCAviTQfCqHjSiG1nu0SpuGrzDRjypYV7QRy4Ldj2TlxywAThg==", "doctor"=>{"name"=>"a", "email"=>"c@gmail.com", "password"=>"[FILTERED]", "license_id"=>"1234567"}, "commit"=>"Create Doctor"}
+[31mUnpermitted parameter: :license_id[0m
+  [1m[36mLicense Load (0.1ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."number" = ? LIMIT ?[0m  [["number", 1234567], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:21:in `create'
+  [1m[36mLicense Load (0.4ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:23:in `create'
+  [1m[36mDoctor Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."license_id" = ? LIMIT ?[0m  [["license_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:23:in `create'
+Redirected to http://localhost:3000/doctors/new
+Completed 302 Found in 519ms (ActiveRecord: 3.6ms | Allocations: 17929)
+
+
+Started GET "/doctors/new" for ::1 at 2020-05-29 00:50:45 -0500
+Processing by DoctorsController#new as HTML
+  Rendering doctors/new.html.erb
+  Rendered doctors/new.html.erb (Duration: 1.9ms | Allocations: 506)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1239)
+
+
+Started GET "/patients/home" for ::1 at 2020-05-29 00:51:21 -0500
+Processing by PatientsController#home as HTML
+  Rendering patients/home.html.erb
+  Rendered patients/home.html.erb (Duration: 0.4ms | Allocations: 91)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 796)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-29 00:51:23 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 6.4ms | Allocations: 710)
+Completed 200 OK in 41ms (Views: 8.1ms | ActiveRecord: 1.1ms | Allocations: 7670)
+
+
+Started POST "/patients" for ::1 at 2020-05-29 00:51:31 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"C3MMlB0T2DNquGXTpYaI6u+fZHaOf7DK0iBKC3Jg5BDQHv+zUGwg6L1oNHFNkOHuOZjDV+Ba13+DnDS1kZmxww==", "patient"=>{"name"=>"marshall", "email"=>"mashall@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "mashall@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:26:in `create'
+  [1m[36mCACHE Patient Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "mashall@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+  [1m[36mPatient Create (0.5ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "marshall"], ["email", "mashall@gmail.com"], ["password_digest", "$2a$12$w81PkPQUybc8Ns2PpVxmz.wSBHss6Lx2iIFwFiEwg46RfBYnxOsmK"], ["created_at", "2020-05-29 05:51:32.054323"], ["updated_at", "2020-05-29 05:51:32.054323"]]
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+Redirected to http://localhost:3000/patients/1
+Completed 302 Found in 407ms (ActiveRecord: 2.8ms | Allocations: 5027)
+
+
+Started GET "/patients/1" for ::1 at 2020-05-29 00:51:32 -0500
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:18:in `show'
+  Rendering patients/show.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/patients/show.html.erb:7
+  Rendered patients/show.html.erb (Duration: 5.3ms | Allocations: 899)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.5ms | Allocations: 2294)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-29 00:51:38 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  Rendered appointments/new.html.erb (Duration: 12.5ms | Allocations: 3520)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.8ms | Allocations: 9234)
+
+
+  
+ActionView::Template::Error (undefined method `1' for #<Appointment:0x00007f8b7fbd4b80>):
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     
+    6:     <label> Patient name:</label><br>
+    7:     <%= f.text_field session[:patient_id] %><br>
+    8:     <label> Date set:</label><br>
+    9: 
+   10:     <label> Time set:</label><br>
+  
+app/views/appointments/new.html.erb:7
+app/views/appointments/new.html.erb:2
+Started GET "/doctors/home" for ::1 at 2020-05-29 01:04:23 -0500
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DoctorsController#home as HTML
+  Rendering doctors/home.html.erb
+  Rendered doctors/home.html.erb (Duration: 2.1ms | Allocations: 338)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 2816)
+
+
+Started GET "/doctors/login" for ::1 at 2020-05-29 01:04:26 -0500
+Processing by DoctorsController#login as HTML
+  Rendering doctors/login.html.erb
+  Rendered sessions/_new.html.erb (Duration: 2.3ms | Allocations: 567)
+  Rendered doctors/login.html.erb (Duration: 6.6ms | Allocations: 874)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 1581)
+
+
+Started GET "/doctors/new" for ::1 at 2020-05-29 01:04:30 -0500
+Processing by DoctorsController#new as HTML
+  Rendering doctors/new.html.erb
+  Rendered doctors/new.html.erb (Duration: 385.2ms | Allocations: 181917)
+Completed 200 OK in 433ms (Views: 389.9ms | ActiveRecord: 2.6ms | Allocations: 191093)
+
+
+Started POST "/doctors" for ::1 at 2020-05-29 01:04:53 -0500
+Processing by DoctorsController#create as HTML
+  Parameters: {"authenticity_token"=>"gZNUjcIKZKMonszPNMZmozW6wPc/GDEBinRHFszgAXx9EYaRtGWShU7gdk6ls5IWkb9WrrVxDkfM95MbJ8+bzg==", "doctor"=>{"name"=>"bob", "email"=>"bob@gmail.com", "password"=>"[FILTERED]", "license_id"=>"1234568"}, "commit"=>"Create Doctor"}
+[31mUnpermitted parameter: :license_id[0m
+  [1m[36mLicense Load (0.6ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."number" = ? LIMIT ?[0m  [["number", 1234568], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:21:in `create'
+  [1m[36mLicense Load (0.4ms)[0m  [1m[34mSELECT "licenses".* FROM "licenses" WHERE "licenses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:23:in `create'
+  [1m[36mDoctor Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."license_id" = ? LIMIT ?[0m  [["license_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:23:in `create'
+  [1m[36mCACHE Doctor Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "doctors" WHERE "doctors"."license_id" = ? LIMIT ?[0m  [["license_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+  [1m[36mDoctor Create (1.4ms)[0m  [1m[32mINSERT INTO "doctors" ("name", "email", "password_digest", "license_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "bob"], ["email", "bob@gmail.com"], ["password_digest", "$2a$12$tZa2OG3ZtC5DqsMqLIS/BuvQOhaC2lz8reGKBXtatrIDBPkDOPw4K"], ["license_id", 2], ["created_at", "2020-05-29 06:04:54.065922"], ["updated_at", "2020-05-29 06:04:54.065922"]]
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/doctors_controller.rb:24:in `create'
+Redirected to http://localhost:3000/doctors/3
+Completed 302 Found in 443ms (ActiveRecord: 5.6ms | Allocations: 12548)
+
+
+Started GET "/doctors/3" for ::1 at 2020-05-29 01:04:54 -0500
+Processing by DoctorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors" WHERE "doctors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/doctors_controller.rb:13:in `show'
+  Rendering doctors/show.html.erb
+  [1m[36mPatient Load (0.7ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/doctors/show.html.erb:7
+  Rendered doctors/show.html.erb (Duration: 12.4ms | Allocations: 4775)
+Completed 200 OK in 27ms (Views: 12.0ms | ActiveRecord: 2.1ms | Allocations: 8619)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-29 01:06:14 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.9ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 26.2ms | Allocations: 6711)
+Completed 200 OK in 70ms (Views: 25.8ms | ActiveRecord: 3.5ms | Allocations: 16185)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-29 01:06:29 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.4ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 12.2ms | Allocations: 3667)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 0.8ms | Allocations: 4294)
+
+
+Started GET "/prescriptions/new" for ::1 at 2020-05-29 01:06:45 -0500
+Processing by PrescriptionsController#new as HTML
+  Rendering prescriptions/new.html.erb
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/prescriptions/new.html.erb:4
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/prescriptions/new.html.erb:6
+  [1m[36mDrug Load (0.3ms)[0m  [1m[34mSELECT "drugs".* FROM "drugs"[0m
+  ↳ app/views/prescriptions/new.html.erb:12
+  Rendered prescriptions/new.html.erb (Duration: 51.2ms | Allocations: 3679)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 1.0ms | Allocations: 4320)
+
+
+Started GET "/" for ::1 at 2020-05-29 01:33:09 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb
+  Rendered sessions/welcome.html.erb (Duration: 7.5ms | Allocations: 223)
+Completed 200 OK in 29ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 1356)
+
+
+Started GET "/patients/home" for ::1 at 2020-05-29 01:33:35 -0500
+Processing by PatientsController#home as HTML
+  Rendering patients/home.html.erb
+  Rendered patients/home.html.erb (Duration: 2.2ms | Allocations: 208)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 1322)
+
+
+Started GET "/doctors/home" for ::1 at 2020-05-29 01:33:37 -0500
+Processing by DoctorsController#home as HTML
+  Rendering doctors/home.html.erb
+  Rendered doctors/home.html.erb (Duration: 0.3ms | Allocations: 91)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 639)
+
+
+Started GET "/patients/home" for ::1 at 2020-05-29 01:33:40 -0500
+Processing by PatientsController#home as HTML
+  Rendering patients/home.html.erb
+  Rendered patients/home.html.erb (Duration: 0.3ms | Allocations: 91)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 636)
+
+
+Started GET "/patients/login" for ::1 at 2020-05-29 01:33:41 -0500
+Processing by PatientsController#login as HTML
+  Rendering patients/login.html.erb
+  Rendered sessions/_new.html.erb (Duration: 4.6ms | Allocations: 311)
+  Rendered patients/login.html.erb (Duration: 8.3ms | Allocations: 472)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 1166)
+
+
+Started GET "/patients/new" for ::1 at 2020-05-29 01:33:43 -0500
+Processing by PatientsController#new as HTML
+  Rendering patients/new.html.erb
+  Rendered patients/new.html.erb (Duration: 11.2ms | Allocations: 706)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 1417)
+
+
+Started POST "/patients" for ::1 at 2020-05-29 01:35:17 -0500
+Processing by PatientsController#create as HTML
+  Parameters: {"authenticity_token"=>"SxrVwXSvQd9zhoyug7CAiwUkWDNGWQ+fwW2aBTM8Gb2QdybmOdC5BKRW3QxrpumP0yP/Eih8aCqQ0eS70MVMbg==", "patient"=>{"name"=>"noah", "email"=>"noah@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create Patient"}
+  [1m[36mPatient Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "noah@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:26:in `create'
+  [1m[36mCACHE Patient Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "patients" WHERE "patients"."email" = ? LIMIT ?[0m  [["email", "noah@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+  [1m[36mPatient Create (1.0ms)[0m  [1m[32mINSERT INTO "patients" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "noah"], ["email", "noah@gmail.com"], ["password_digest", "$2a$12$6yIoNCqJLHHXH8Ovjmpj.uAf56UzZ24MUGVSPjOE0ISnyMLNpZwdq"], ["created_at", "2020-05-29 06:35:17.820109"], ["updated_at", "2020-05-29 06:35:17.820109"]]
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/patients_controller.rb:27:in `create'
+Redirected to http://localhost:3000/patients/2
+Completed 302 Found in 441ms (ActiveRecord: 3.5ms | Allocations: 5028)
+
+
+Started GET "/patients/2" for ::1 at 2020-05-29 01:35:17 -0500
+Processing by PatientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/patients_controller.rb:18:in `show'
+  Rendering patients/show.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/patients/show.html.erb:7
+  Rendered patients/show.html.erb (Duration: 3.3ms | Allocations: 909)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 2287)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-29 01:35:45 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  Rendered appointments/new.html.erb (Duration: 14.0ms | Allocations: 3878)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 1.5ms | Allocations: 9771)
+
+
+  
+ActionView::Template::Error (undefined method `2' for #<Appointment:0x00007f8056603500>):
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     
+    6:     <label> Patient name:</label><br>
+    7:     <%= f.text_field session[:patient_id] %><br>
+    8:     <label> Date set:</label><br>
+    9: 
+   10:     <label> Time set:</label><br>
+  
+app/views/appointments/new.html.erb:7
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-29 01:36:29 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  Rendered appointments/new.html.erb (Duration: 9.1ms | Allocations: 3266)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 3849)
+
+
+  
+ActionView::Template::Error (undefined method `2' for #<Appointment:0x00007f8056d963d0>):
+    4:     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    5:     
+    6:     <label> Patient name:</label><br>
+    7:     <%= f.text_field session[:patient_id] %><br>
+    8:     <label> Date set:</label><br>
+    9: 
+   10:     <label> Time set:</label><br>
+  
+app/views/appointments/new.html.erb:7
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-29 01:44:39 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (1.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  [1m[36mPatient Load (1.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ app/views/appointments/new.html.erb:7
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ (pry):4
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients"[0m
+  ↳ (pry):5
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (pry):7
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (pry):8
+  [1m[36mCACHE Patient Load (0.0ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (pry):9
+  Rendered appointments/new.html.erb (Duration: 592194.1ms | Allocations: 64959)
+Completed 500 Internal Server Error in 592208ms (ActiveRecord: 2.9ms | Allocations: 66692)
+
+
+  
+ActionView::Template::Error (undefined method `2' for #<Appointment:0x00007f8056b76578>):
+     5:     
+     6:     <label> Patient name:</label><br>
+     7:     <% binding.pry %>
+     8:     <%= f.text_field Patient.find(session[:patient_id]).name %><br>
+     9:     <label> Date set:</label><br>
+    10: 
+    11:     <label> Time set:</label><br>
+  
+app/views/appointments/new.html.erb:8
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-29 01:55:38 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  [1m[36mPatient Load (0.8ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb (Duration: 27676.4ms | Allocations: 39661)
+Completed 500 Internal Server Error in 27729ms (ActiveRecord: 5.7ms | Allocations: 50632)
+
+
+  
+ActionView::Template::Error (undefined method `noah' for #<Appointment:0x00007f83dbd19690>):
+     5:     
+     6:     <label> Patient name:</label><br>
+     7:     
+     8:     <%= f.text_field Patient.find(session[:patient_id]).name %><br>
+     9:     <label> Date set:</label><br>
+    10: 
+    11:     <label> Time set:</label><br>
+  
+app/views/appointments/new.html.erb:8
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-29 01:56:41 -0500
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (1.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  [1m[36mPatient Load (0.3ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb (Duration: 58.2ms | Allocations: 16374)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 5.0ms | Allocations: 27693)
+
+
+  
+ActionView::Template::Error (undefined method `noah' for #<Appointment:0x00007fb8b6190c00>):
+     5:     
+     6:     <label> Patient name:</label><br>
+     7:     
+     8:     <%= f.text_field Patient.find(session[:patient_id]).name %><br>
+     9:     <label> Date set:</label><br>
+    10: 
+    11:     <label> Time set:</label><br>
+  
+app/views/appointments/new.html.erb:8
+app/views/appointments/new.html.erb:2
+Started GET "/appointments/new" for ::1 at 2020-05-29 01:59:58 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  [1m[36mPatient Load (1.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb (Duration: 440.9ms | Allocations: 195518)
+Completed 200 OK in 512ms (Views: 455.7ms | ActiveRecord: 5.7ms | Allocations: 206946)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-29 02:02:19 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/appointments/new.html.erb:8
+  Rendered appointments/new.html.erb (Duration: 10.4ms | Allocations: 1902)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.7ms | Allocations: 3663)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-29 02:09:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by AppointmentsController#new as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:23:in `get_patient'
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  Rendered appointments/new.html.erb (Duration: 11.3ms | Allocations: 5579)
+Completed 200 OK in 46ms (Views: 14.3ms | ActiveRecord: 0.4ms | Allocations: 21161)
+
+
+Started GET "/appointments/new" for ::1 at 2020-05-29 02:09:25 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mPatient Load (0.2ms)[0m  [1m[34mSELECT "patients".* FROM "patients" WHERE "patients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:23:in `get_patient'
+  Rendering appointments/new.html.erb
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/views/appointments/new.html.erb:4
+  Rendered appointments/new.html.erb (Duration: 4.5ms | Allocations: 1308)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 0.5ms | Allocations: 3592)
+
+

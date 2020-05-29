@@ -4,7 +4,8 @@
     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
     
     <label> Patient name:</label><br>
-    <%= f.text_field session[:patient_id] %><br>
+    
+    <%= @patient.name %><br>
     <label> Date set:</label><br>
 
     <label> Time set:</label><br>

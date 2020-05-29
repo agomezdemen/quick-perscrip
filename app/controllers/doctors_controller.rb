@@ -18,6 +18,8 @@ class DoctorsController < ApplicationController
 
   def create
     @doctor = Doctor.new(doctor_params)
+    license = License.find_by(number: params[:doctor][:license_id].to_i)
+    @doctor.license_id = license.id
     if @doctor.valid?
       @doctor.save
       session[:doctor_id] = @doctor.id
@@ -30,6 +32,6 @@ class DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.require(:doctor).permit(:name, :email, :password, :license_id)
+    params.require(:doctor).permit(:name, :email, :password)
   end
 end
