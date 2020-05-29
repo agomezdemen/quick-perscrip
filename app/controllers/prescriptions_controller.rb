@@ -8,7 +8,12 @@ class PrescriptionsController < ApplicationController
 
     def create
         @prescription = Prescription.new(prescription_params)
+        @prescription.doctor = @doctor
         @prescription.save
+    end
+
+    def show
+        @prescription = Prescription.find(params[:id])
     end
 
     private

@@ -5,12 +5,32 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @patient = Patient.find_by(email: params[:email])
-    if @patient && @patient.authenticate(params[:password])
-       session[:patient_id] = @patient.id
-       redirect_to '/welcome'
-    else
-       redirect_to '/login'
+    if params[:patient]
+      @patient = Patient.find_by(email: params[:email])
+      if @patient && @patient.authenticate(params[:password])
+        session[:patient_id] = @patient.id
+        redirect_to @patient
+      else
+        render 'patients/login'
+      end
+    elsif params[:doctor]
+      @doctor = Doctor.find_by(email: params[:email])
+      if @doctor && @doctor.authenticate(params[:password])
+        session[:doctor_id] = @doctor.id
+        redirect_to @doctor
+      else
+        render 'doctors/login'
+      end
+    end
+  end
+
+  def destroy
+    if session[:patient_id]
+      session.delete :patient
+      redirect_to patients_home_path
+    elsif session[:doctor_id]
+      session.delete :doctor
+      redirect_to doctors_home_path
     end
   end
 
@@ -23,10 +43,3 @@ class SessionsController < ApplicationController
   def welcome
   end
 end
-
-#need to make user super class and have patients and doctors inherit
-# <% if logged_in? %>
-#     <h1>You are Logged In, <%= current_patient.name %></h1>
-# <%end%>
-# <%= button_to "Login", '/login', method: :get%>
-# <%= button_to "Sign Up", '/patients/new', method: :get%>

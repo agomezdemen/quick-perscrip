@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+30.times do
+    Drug.create(name: Faker::Cannabis.strain)
+end
+
+License.create(number: 1234567)
+License.create(number: 1234568)

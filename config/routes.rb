@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
   root 'sessions#welcome'
   get 'doctors/home'
-  get 'doctors/new'
+  get 'doctors/new', to: 'doctors#new'
   get 'doctors/create'
+  get 'doctors/login', to: 'doctors#login'
   get '/patients' => 'patients#index'
   get 'patients/home'
-  get 'patients/new'
+  get 'patients/new', to: 'patients#new'
   get 'patients/create'
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/login'
+  get 'patients/login', to: 'patients#login'
+  post '/login', to: 'sessions#create'
   get 'sessions/welcome'
   get 'appointments/new'
   get 'prescriptions/new'
+  post '/logout', to: 'sessions#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :appointments
   resources :drugs
@@ -20,8 +21,7 @@ Rails.application.routes.draw do
   resources :licenses
   resources :patients, only: [:new, :create, :show, :home]
   resources :doctors
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
+  
   get 'welcome', to: 'sessions#welcome'
   get 'authorized', to: 'sessions#page_requires_login'
 
