@@ -13,12 +13,23 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
   end
 
+  def login
+  end
+
   def create
+    @doctor = Doctor.new(doctor_params)
+    if @doctor.valid?
+      @doctor.save
+      session[:doctor_id] = @doctor.id
+      redirect_to @doctor
+    else
+      redirect_to new_doctor_path
+    end
   end
 
   private
 
-  def patient_params
-    params.require(:doctor).permit(:name, :email, :password, :licnese_id)
+  def doctor_params
+    params.require(:doctor).permit(:name, :email, :password, :license_id)
   end
 end

@@ -11,6 +11,10 @@ class PrescriptionsController < ApplicationController
         @prescription.save
     end
 
+    def show
+        @prescription = Prescription.find(params[:id])
+    end
+
     private
 
     def prescription_params

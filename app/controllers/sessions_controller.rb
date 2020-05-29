@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @patient = Patient.find_by(email: params[:email])
     if @patient && @patient.authenticate(params[:password])
        session[:patient_id] = @patient.id

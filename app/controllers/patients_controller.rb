@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  # skip_before_action :authorized, only: [:new, :create]
+  #skip_before_action :authorized, only: [:new, :create]
 
   def index
     @patients = Patient.all
@@ -30,6 +30,11 @@ class PatientsController < ApplicationController
     else
       redirect_to new_patient_path
     end
+  end
+
+  def destroy
+    @patient = Patient.where(id: params[:id]).first
+    @patient.destroy
   end
 
   private

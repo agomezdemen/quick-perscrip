@@ -2,8 +2,9 @@
 <%= form_for @appointment do |f| %>
     <label> Doctor name:</label><br>
     <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    
     <label> Patient name:</label><br>
-    <%= f.@patient.name %>
+    <%= f.text_field session[:patient_id] %><br>
     <label> Date set:</label><br>
 
     <label> Time set:</label><br>

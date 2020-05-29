@@ -1,12 +1,17 @@
 class AppointmentsController < ApplicationController
     def new
         @doctors = Doctor.all
-        @appointment = Appointment.new(patient)
+        @appointment = Appointment.new
     end
 
     def create
         @appointment = Appointment.new(appointment_params)
         @appointment.save
+    end
+
+    def destroy
+        @appointment = Appointment.where(id: params[:id]).first
+        @appointment.destroy
     end
 
     private

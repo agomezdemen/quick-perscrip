@@ -9,3 +9,6 @@
 30.times do
     Drug.create(name: Faker::Cannabis.strain)
 end
+
+License.create(number: 1234567)
+License.create(number: 1234568)
