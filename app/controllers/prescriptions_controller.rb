@@ -8,6 +8,7 @@ class PrescriptionsController < ApplicationController
 
     def create
         @prescription = Prescription.new(prescription_params)
+        @prescription.doctor = @doctor
         @prescription.save
     end
 

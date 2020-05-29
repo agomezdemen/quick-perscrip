@@ -1,7 +1,7 @@
 <h1>Create Prescription</h1>
 <%= form_for @prescription do |f| %>
     <label> Doctor name: </label><br>
-    <%= f.collection_select :doctor_id, @doctors, :id, :name %><br>
+    <%= @doctor.name %><br>
     <label> Patient name: </label><br>
     <%= f.collection_select :patient_id, @patients, :id, :name %><br>
     <label> Doctor signature: </label><br>

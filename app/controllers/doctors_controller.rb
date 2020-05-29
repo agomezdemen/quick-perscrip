@@ -1,7 +1,7 @@
 class DoctorsController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create, :home, :login]
 
   def home
-    render '/doctors/home'
   end
 
   def new
@@ -23,7 +23,7 @@ class DoctorsController < ApplicationController
     if @doctor.valid?
       @doctor.save
       session[:doctor_id] = @doctor.id
-      redirect_to @doctor
+      redirect_to doctors_login_path
     else
       redirect_to new_doctor_path
     end

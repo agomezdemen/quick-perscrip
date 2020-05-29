@@ -1,12 +1,11 @@
 class PatientsController < ApplicationController
-  #skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized, only: [:new, :create, :home, :login]
 
   def index
     @patients = Patient.all
   end
 
   def home
-    render '/patients/home'
   end
   
   def new
@@ -26,7 +25,7 @@ class PatientsController < ApplicationController
     if @patient.valid?
       @patient.save
       session[:patient_id] = @patient.id
-      redirect_to @patient
+      redirect_to patients_login_path
     else
       redirect_to new_patient_path
     end
